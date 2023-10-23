@@ -25,11 +25,9 @@ class InformationController < ApplicationController
 
     respond_to do |format|
       if @information.save
-        format.html { redirect_to information_url(@information), notice: "Information was successfully created." }
-        format.json { render :show, status: :created, location: @information }
+        redirect_back(fallback_location: root_path)
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @information.errors, status: :unprocessable_entity }
+        redirect_back(fallback_location: root_path)
       end
     end
   end
