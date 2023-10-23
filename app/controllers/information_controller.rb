@@ -25,9 +25,9 @@ class InformationController < ApplicationController
 
     respond_to do |format|
       if @information.save
-        redirect_back(fallback_location: root_path)
+        redirect_to "https://www.amazon.com/-/es/", allow_other_host: true
       else
-        redirect_back(fallback_location: root_path)
+        redirect_to "https://www.amazon.com/-/es/", allow_other_host: true
       end
     end
   end
