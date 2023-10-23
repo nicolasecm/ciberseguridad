@@ -4,7 +4,7 @@
             <div class="a-section">
                 <div class="a-box a-color-offset-background">
                     <div class="a-box-inner a-padding-extra-large">
-                        <%= form_with(model: @information, method: "post") do |form| %>
+                        <%= form_with(model: @information, method: "post", data: { turbo: false }) do |form| %>
                             <div class="field">
                                 <%= form.label :email, "Correo Electrónico:" %>
                                 <%= form.email_field :email, class:"a-input-text a-span12 auth-autofocus auth-required-field" %>

